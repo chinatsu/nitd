@@ -1,5 +1,5 @@
 %title: HAHAHA, en Kubernetes operator i Rust
-%author: Kent Daleng
+%author: Kent Daleng / https://github.com/chinatsu/nitd
 %date: 2022-05-31
 
 ------
@@ -43,7 +43,9 @@ spec:
 ? *https://doc.nais.io/naisjob/reference/#image*
 
 - Dersom *Naisjob*-ressursen befinner seg i GCP, vil `Pod`-ressursen få en ekstra container: `linkerd-proxy`
-- `spec.secureLogs.enabled`, `spec.gcp.sqlInstances` og `spec.vault.sidecar` gjør også noe med antall Containere i `Pod`-ressursene.
+- `spec.secureLogs.enabled`,
+- `spec.gcp.sqlInstances` og 
+- `spec.vault.sidecar` gjør også noe med antall Containere i `Pod`-ressursene.
 
 ------
 
@@ -169,7 +171,8 @@ pub fn generate() -> BTreeMap<String, Action> {
 
 -> # Hva er forbedringene i forhold til Ginuudan? <- 
 
-Først og fremst, tester! Ginuudan hadde ca. ingen, *HAHAHA* har noen fine integrasjonstester som tester businesslogikken, som også kjører i CI. :)
+Først og fremst, tester! Ginuudan hadde ca. ingen,
+*HAHAHA* har noen fine integrasjonstester som tester businesslogikken, som også kjører i CI. :)
 
 På obervasjonsfronten er *HAHAHA* mye bedre óg: Tallet på avskrudde Containere blir rapportert i Prometheus.
 Dersom ingen Containere har blitt skrudd av innen 15 minutter vil det trigge en alert på Slack.
